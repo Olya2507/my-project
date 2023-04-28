@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body style="background-color:#ffee77"></body>
+<div class="col-12 col-md-30 col-lg-15 ">
+<h1>Наши отели</h1>
+<br>
+    <br>
+<div class="row">
+    {% for hotel in hotels %}
+    <div class="col=md-4">
+        <div class="card=mb-2">
+        <img src="{% static hotel.image %}" alt=" " width="700" height="511">
+
+          <div class="col-12 col-md-30 col-lg-15">
+            <div class="card-body">
+                <h5 class="card-title">{{ hotel.title }}</h5>
+                <p class="card-text">{{ hotel.about }}</p>
+                <a href="{% url 'hotel_detail' hotel.pk %}"
+                   class="btn btn-primary">
+                    Подробнее
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+<br>
+<b><h3>Информация о наших отелях на planetofhotels.com</h3></b>
+<p><a href="https://planetofhotels.com/gruziya/batumi/orbi-city">Аппартаменты Орби сити Батуми</a></p>
+<p><a href="https://planetofhotels.com/gruziya/kobuleti/mari-hotel">Отель Лайк Мари Кобулети</a></p>
+<p><a href="https://planetofhotels.com/gruziya/kobuleti/hotel-estonia-two">Отель Эстония Кобулети</a></p>
+<p><a href="https://planetofhotels.com/gruziya/gonio/mandarin">Отель Мандарин Гонио</a></p>
+<p><a href="https://planetofhotels.com/gruziya/kobuleti/shine-hotel">Отель Shine Кобулети</a></p>
+<p><a href="https://planetofhotels.com/en/georgia/kobuleti/guest-house-ambiance">Отель Guest house Ambiance Кобулети</a></p>
+<p><a href="https://planetofhotels.com/gruziya/ureki/hotel-imeri-hotel#hotelroomtypes">Отель Imeri Уреки</a></p>
+<p><a href="https://planetofhotels.com/gruziya/gudauri/gudauri-inn">Отель Gudauri Inn Гудаури</a></p>
+<p><a href="https://planetofhotels.com/gruziya/bakuriani/crystal-hotel-spa">Отель Crystal & SPA Бакуриани</a></p>
+<p><a href="https://planetofhotels.com/gruziya/gudauri/hotel-carpe-diem-gudauri">Отель Carpe Diem Гудаури</a></p>
+<p><a href="https://planetofhotels.com/gruziya/bakuriani/boutique-nine">Отель Boutique Nine Бакуриани</a></p>
+
+{% endblock %}

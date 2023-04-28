@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body style="background-color:#ffee77"></body>
+<div class="col-12 col-md-30 col-lg-15 ">
+<h1>{{ project.title }}</h1>
+<div class="row">
+    <div class="col=md-8">
+        <img src="{% static project.image %}" width="700" height="511" alt=" " >
+    </div>
+        <div class="col-20 col-md-20 col-lg-5 ">
+            <h5>информация об экскурсии:</h5>
+            <p>{{ project.description }}</p>
+            </div>
+
+</div>
+</div>
+{% endblock %}

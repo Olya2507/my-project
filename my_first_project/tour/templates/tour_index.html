@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body style="background-color:#ffee77"></body>
+<div class="col-12 col-md-30 col-lg-15 ">
+<h1>Наши туры</h1>
+<br>
+    <h3>Предлагаем экскурсионные туры в Грузию с отдыхом на море, а так же наши авторские туры для небольших групп туристов.</h3>
+<br>
+    <br>
+<div class="row">
+    {% for tour in tours %}
+    <div class="col=md-4">
+        <div class="card=mb-2">
+        <img src="{% static tour.image %}" alt=" " width="400" height="211">
+          <div class="col-12 col-md-30 col-lg-15">
+            <div class="card-body">
+                <h5 class="card-title">{{ tour.title }}</h5>
+                <p class="card-text">{{ tour.about }}</p>
+                <a href="{% url 'tour_detail' tour.pk %}"
+                   class="btn btn-primary">
+                    Подробнее
+                </a>
+
+
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% include "pagination.html" with page=tours %}
+ </div>
+ </div>
+  </div>
+
+{% endblock %}
+
+
+

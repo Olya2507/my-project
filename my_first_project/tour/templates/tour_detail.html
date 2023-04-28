@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body style="background-color:#ffee77"></body>
+<div class="col-12 col-md-30 col-lg-15 ">
+<h1>{{ tour.title }}</h1>
+<div class="row">
+    <div class="col=md-8">
+        <img src="{% static tour.image %}" alt=" " width="600" height="411">
+    </div>
+        <div class="col-30 col-md-20 col-lg-6 ">
+            <h5>О туре:</h5>
+            <p>{{ tour.about }}</p>
+            <p>{{ tour.description }}</p>
+            <p>{{ tour.service }}</p>
+        </div>
+</div>
+  </div>
+<br>
+
+<button type="button" class="btn btn-sm btn-outline-secondary"><a href="/tour/tour">Программа тура</a></button>
+<button type="button" class="btn btn-sm btn-outline-secondary"><a href="/calendar_tour">Стоимость тура</a></button>
+<button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button>
+
+{% endblock %}

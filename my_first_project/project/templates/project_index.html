@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body style="background-color:#ffee77"></body>
+<div class="col-12 col-md-30 col-lg-15 ">
+<h1>Экскурсии по Грузии</h1>
+    <p>Приглашаем посетить дополнительные экскурсии во ремя вашего отдыха в Грузии</p>
+<br>
+    <br>
+<div class="row">
+    {% for project in projects %}
+    <div class="col=md-4">
+        <div class="card=mb-2">
+        <img src="{% static project.image %}" alt=" " width="800" height="611">
+          <div class="col-12 col-md-30 col-lg-18">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <a href="{% url 'project_detail' project.pk %}"
+                   class="btn btn-primary">
+                    Подробнее
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

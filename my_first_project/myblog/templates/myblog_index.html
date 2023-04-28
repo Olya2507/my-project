@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body style="background-color:#ffee77"></body>
+<div class="col-12 col-md-30 col-lg-15 ">
+ <br>
+ <br>
+
+
+<h1>Наш блог</h1>
+    <h3>В этом разделе будут публиковаться интересные факты о Грузии. Вы можете оставлять свои комментарии или задавать интересующие вас вопросы под публикациями. </h3>
+<br>
+ <br>
+     <meta charset="utf-8">
+<title>Вставка видео на сайт</title>
+<link rel="stylesheet" href="style.css">
+
+<body>
+<h1><a>О грузинской кухне</a> </h1>
+<iframe width="760" height="515" src="https://www.youtube.com/embed/RJeNrYVDuWc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+<br>
+    <br>
+    <br>
+ <br>
+<div class="row">
+    {% for myblog in myblogs %}
+    <div class="col=md-4">
+        <div class="card=mb-2">
+        <img src="{% static myblog.image %}" alt="" width="450" height="300">
+          <div class="col-8 col-md-50 col-lg-30">
+            <div class="card-body">
+                <h5 class="card-title">{{ myblog.title }}</h5>
+                <a href="{% url 'myblog_detail' myblog.pk %}"
+                   class="btn btn-primary">
+                    Подробнее
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

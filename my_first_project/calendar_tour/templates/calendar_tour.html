@@ -1,0 +1,1081 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>Календарь туров</h1>
+
+<html>
+<head>
+    <title>Слайдер изображений</title>
+    <style>
+      html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica", sans-serif;
+      }
+      img {
+      max-width: 100%;
+      }
+      .slider-container {
+      height: 65%;
+      width: 65%;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      margin:0 auto;display: table;
+      }
+      .menu {
+      position: absolute;
+      left: 0;
+      z-index: 900;
+      width: 100%;
+      bottom: 0;
+      }
+      .menu label {
+      cursor: pointer;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50px;
+      margin: 0 0.2em 1em;
+      }
+      .menu label:hover,.menu label:focus {
+      background: #1c87c9;
+      }
+      .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 10;
+      padding: 8em 1em 0;
+      background-size: cover;
+      background-position: 50% 50%;
+      transition: left 0s 0.75s;
+      }
+      [id^="slide"]:checked + .slide {
+      left: 0;
+      z-index: 100;
+      transition: left 0.65s ease-out;
+      }
+      .slide-1 {
+      background-image: url("/static/img/img_6.png");
+      }
+      .slide-2 {
+      background-image: url("/static/img/img_3.png");
+      }
+      .slide-3 {
+      background-image: url("/static/img/img_26.png");
+      }
+      .slide-4 {
+      background-image: url("/static/img/img_32.png");
+      }
+      .slide-5 {
+      background-image: url("/static/img/img_7.png");
+      }
+      .slide-6 {
+      background-image: url("/static/img/img_4.png");
+      }
+      .slide-7 {
+      background-image: url("/static/img/img_25.png");
+      }
+      .slide-8 {
+      background-image: url("/static/img/img_33.png");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-container">
+      <div class="menu">
+        <label for="slide-dot-1"></label>
+        <label for="slide-dot-2"></label>
+        <label for="slide-dot-3"></label>
+        <label for="slide-dot-4"></label>
+        <label for="slide-dot-5"></label>
+        <label for="slide-dot-6"></label>
+        <label for="slide-dot-7"></label>
+        <label for="slide-dot-8"></label>
+      </div>
+      <input id="slide-dot-1" type="radio" name="slides" checked>
+      <div class="slide slide-1"></div>
+      <input id="slide-dot-2" type="radio" name="slides">
+      <div class="slide slide-2"></div>
+      <input id="slide-dot-3" type="radio" name="slides">
+      <div class="slide slide-3"></div>
+      <input id="slide-dot-4" type="radio" name="slides">
+      <div class="slide slide-4"></div>
+      <input id="slide-dot-5" type="radio" name="slides" checked>
+      <div class="slide slide-5"></div>
+      <input id="slide-dot-6" type="radio" name="slides">
+      <div class="slide slide-6"></div>
+      <input id="slide-dot-7" type="radio" name="slides">
+      <div class="slide slide-7"></div>
+      <input id="slide-dot-8" type="radio" name="slides">
+      <div class="slide slide-8"></div>
+    </div>
+  </body>
+</html>
+<br>
+<div class="col-12 col-md-30 col-lg-15">
+<p><b>Для экскурсионных туров с отдыхом на море цена указана на одного человека без питания</b></p>
+<p>завтраки + 20$, полупансион + 50$, полный пансион + 80$</p>
+<p>Дополнительно оплачивается: </p>
+<p>тур.услуга – 100 бел.руб </p>
+<p>транспортная услуга  - 100 бел.руб</p>
+<p>страховка – около 7$</p>
+</div>
+
+
+
+<br>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Модальное окно на чистом CSS</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #212529;
+      text-align: left;
+      background-color: #fff;
+    }
+
+    .tabs {
+      font-size: 5;
+      max-width: 2500px;
+      margin-left: 30;
+      margin-right: 50;
+    }
+
+    .tabs>input[type="radio"] {
+      display: none;
+    }
+
+    .tabs>div {
+      /* скрыть контент по умолчанию */
+      display: none;
+      border: 4px solid #e0e0e0;
+      padding: 15px 19px;
+      font-size: 20px;
+    }
+
+    /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+    #tab-btn-1:checked~#Апрель,
+    #tab-btn-2:checked~#Май,
+    #tab-btn-3:checked~#Июнь,
+    #tab-btn-4:checked~#Июль,
+    #tab-btn-5:checked~#Август,
+    #tab-btn-6:checked~#Сентябрь {
+      display: block;
+    }
+
+    .tabs>label {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+      background-color: #f5f5f5;
+      border: 2px solid #e0e0e0;
+      padding: 2px 8px;
+      font-size: 18px;
+      line-height: 2;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+      cursor: pointer;
+      position: relative;
+      top: 2px;
+    }
+
+    .tabs>label:not(:first-of-type) {
+      border-left: none;
+    }
+
+    .tabs>input[type="radio"]:checked+label {
+      background-color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+    table {
+    width: 100%; /* Ширина таблицы в процентах */
+    text-align: center;
+   }
+   .col1 {
+    width: 90px; /* Ширина ячейки */
+    }
+  </style>
+
+</head>
+
+<div class="tabs">
+  <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+  <label for="tab-btn-1">Апрель</label>
+  <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+  <label for="tab-btn-2">Май</label>
+  <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+  <label for="tab-btn-3">Июнь</label>
+  <input type="radio" name="tab-btn" id="tab-btn-4" value="">
+  <label for="tab-btn-4">Июль</label>
+  <input type="radio" name="tab-btn" id="tab-btn-5" value="">
+  <label for="tab-btn-5">Август</label>
+  <input type="radio" name="tab-btn" id="tab-btn-6" value="">
+  <label for="tab-btn-6">Сентябрь</label>
+
+  <div id="Апрель">
+  <h2><b>Апрель</b></h2>
+  <table border="1">
+  <tbody>
+  <tr>
+    <th>Дата тура</th>
+    <th>Количество дней</th>
+    <th>Название тура</th>
+    <th>Курорт</th>
+    <th>Отель</th>
+    <th>Стоимость</th>
+    <th>Забронировать</th>
+  </tr>
+  <tr>
+    <td>30.04-13.05</td>
+    <td>14</td>
+    <td>От Тбилиси до Батуми (авторский тур)</td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>450$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+
+<br>
+  <div id="Май">
+  <h2><b>Май</b></h2>
+  <table border="1">
+  <tbody>
+  <tr>
+    <th>Дата тура</th>
+    <th>Количество дней</th>
+    <th>Название тура</th>
+    <th>Курорт</th>
+    <th>Отель</th>
+    <th>Стоимость</th>
+    <th>Забронировать</th>
+  </tr>
+  <tr>
+    <td>12.05-23.05</td>
+    <td>12</td>
+    <td>Чарующая Грузия 2023 ЭКСПРЕСС !</td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 430$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td>Паломнический тур в Грузию!</td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 400$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 370$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+    <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>26.05-11.06</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 400$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+<br>
+<div id="Июнь">
+<h2><b>Июнь</b></h2>
+<table border="1">
+  <tbody>
+  <tr>
+    <th>Дата тура</th>
+    <th>Количество дней</th>
+    <th>Название тура</th>
+    <th>Курорт</th>
+    <th>Отель</th>
+    <th>Стоимость</th>
+    <th>Забронировать</th>
+  </tr>
+  <tr>
+    <td>10.06-26.06</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 370$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>10.06-26.06</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>10.06-26.06</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>10.06-26.06</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>10.06-26.06</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>10.06-26.06</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>10.06-26.06</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 400$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>19.06-05.07</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>19.06-05.07</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 350$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>19.06-05.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 350$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+   <tr>
+    <td>19.06-05.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 370$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>19.06-05.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 370$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>19.06-05.07</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>19.06-05.07</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 420$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+<td>28.06-14.07</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 390$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>28.06-14.07</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>28.06-14.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>28.06-14.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>28.06-14.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>28.06-14.07</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+    <tr>
+    <td>28.06-14.07</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 440$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  </tbody>
+</table>
+ </div>
+<br>
+
+<div id="Июль">
+<h2><b>Июль</b></h2>
+
+<table border="1">
+  <tbody>
+  <tr>
+    <th>Дата тура</th>
+    <th>Количество дней</th>
+    <th>Название тура</th>
+    <th>Курорт</th>
+    <th>Отель</th>
+    <th>Стоимость</th>
+    <th>Забронировать</th>
+  </tr>
+  <tr>
+    <td>07.07-23.07</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 390$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>07.07-23.07</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>07.07-23.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>07.07-23.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>07.07-23.07</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>07.07-23.07</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>07.07-23.07</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 440$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 390$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 440$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>25.07-10.08</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 390$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>25.07-10.08</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>25.07-10.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>16.07-01.08</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>25.07-10.08</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 440$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div id="Август">
+<h2><b>Август</b></h2>
+<table border="1">
+  <tbody>
+  <tr>
+    <th>Дата тура</th>
+    <th>Количество дней</th>
+    <th>Название тура</th>
+    <th>Курорт</th>
+    <th>Отель</th>
+    <th>Стоимость</th>
+    <th>Забронировать</th>
+  </tr>
+  <tr>
+    <td>03.08-19.08</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 390$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>03.08-19.08</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>03.08-19.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>03.08-19.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>03.08-19.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>03.08-19.08</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>03.08-19.08</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 440$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>12.08-28.08</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 390$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>12.08-28.08</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>12.08-28.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>12.08-28.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>12.08-28.08</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>12.08-28.08</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>12.08-28.08</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 440$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+<td>21.08-06.09</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 380$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>21.08-06.09</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 350$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>21.08-06.09</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 350$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>21.08-06.09</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 370$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>21.08-06.09</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 370$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>21.08-06.09</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 350$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>21.08-06.09</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 420$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  </tbody>
+ </table>
+ </div>
+  <br>
+  <div id="Сентябрь">
+  <h2><b>Сентябрь</b></h2>
+  <table border="1">
+  <tbody>
+  <tr>
+    <th>Дата тура</th>
+    <th>Количество дней</th>
+    <th>Название тура</th>
+    <th>Курорт</th>
+    <th>Отель</th>
+    <th>Стоимость</th>
+    <th>Забронировать тур</th>
+  </tr>
+  <tr>
+    <td>01.09-17.09</td>
+    <td>17</td>
+    <td>Две жемчужины Кавказа</td>
+    <td>Батуми</td>
+    <td>Орби Сити</td>
+    <td>от 370$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>01.09-17.09</td>
+    <td>17</td>
+    <td> Все краски Грузии </td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>01.09-17.09</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Лайк Мари</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>01.09-17.09</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Shine</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>01.09-17.09</td>
+    <td>17</td>
+    <td>Все краски Грузии</td>
+    <td>Кобулети</td>
+    <td>Отель Guest house Ambiance</td>
+    <td>от 360$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>01.09-17.09</td>
+    <td>17</td>
+    <td> Моя любимая Грузия </td>
+    <td>Уреки</td>
+    <td>Imeri</td>
+    <td>от 340$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  <tr>
+    <td>01.09-17.09</td>
+    <td>17</td>
+    <td>Моё грузинское лето</td>
+    <td>Гонио</td>
+    <td>Мандарин</td>
+    <td>от 400$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+    <tr>
+    <td>20.09-05.10</td>
+    <td>16</td>
+    <td>Релакс-тур в Грузию(фитнес+йога)</td>
+    <td>Кобулети</td>
+    <td>Эстония</td>
+    <td>от 350$</td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+  </tr>
+  </tbody>
+ </table>
+ </div>
+</div>
+</body>
+</html>
+
+  </div>
+{% endblock %}

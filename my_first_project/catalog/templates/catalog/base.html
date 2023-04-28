@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block page_content %}
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Каталог туров{% endblock %}</title>
+
+</head>
+  <body>
+    <div id="header">
+      <a href="/catalog" class="logo">Каталог туров</a>
+    </div>
+    <div id="subheader">
+      <div class="cart">
+    {% with total_items=cart|length %}
+        {% if cart|length > 0 %}
+            Карзина:
+            <a href="{% url 'cart:cart_detail' %}">
+                {{ total_items }} наименования{{ total_items|pluralize }},
+                ${{ cart.get_total_price }}
+            </a>
+        {% else %}
+            Ваша корзина пуста
+        {% endif %}
+    {% endwith %}
+</div>
+    </div>
+    <div id="content">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </body>
+</html>
+{% endblock %}

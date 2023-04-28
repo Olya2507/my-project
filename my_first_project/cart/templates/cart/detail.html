@@ -1,0 +1,83 @@
+{% extends "catalog/base.html" %}
+{% load static %}
+{% block title %}
+    Ваша карзина
+{% endblock %}
+{% block content %}
+    <h1>Ваша карзина</h1>
+    <table class="cart">
+        <style type="text/css">
+   TABLE {
+    width: 800px; /* Ширина таблицы */
+    border: 2px solid black; /* Рамка вокруг таблицы */
+    background: #778899; /* Цвет фона */
+    color: white; /* Цвет текста */
+   }
+   TD, TH {
+    text-align: center; /* Выравнивание по центру */
+    padding: 3px; /* Поля вокруг текста */
+   }
+   TH {
+    color: white; /* Цвет текста */
+    border-bottom: 4px double black; /* Двойная линия снизу */
+   }
+   .even { /* Стиль для четных колонок */
+    background: #ffe4b5; /* Цвет фона */
+    color: black; /* Цвет текста */
+   }
+   .lc { /* Стиль для первой колонки */
+    text-align: left; /* Выравнивание по левому краю */
+    color: #fffacd; /* Цвет текста */
+   }
+  </style>
+        <thead>
+        <tr>
+            <th>Фото</th>
+            <th>Название тура</th>
+            <th>Количество</th>
+            <th>Удалить</th>
+            <th>Цена тура</th>
+            <th>Всего</th>
+        </tr>
+        </thead>
+        <br><br>
+        <tbody>
+        {% for item in cart %}
+            {% with mytour=item.mytour %}
+                <tr>
+                    <td>
+                        <a href="{{ mytour.get_absolute_url }}">
+                            <img src="
+                                {% if mytour.image %}
+                                    {{ mytour.image.url }}
+                                {% else %}
+                                    {% static 'img/no_image.png' %}
+                                {% endif %}" width='100' height='70'>
+                        </a>
+                    </td>
+                    <td>{{ mytour.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td><a href="{% url 'cart:cart_remove' mytour.id %}">Удалить</a></td>
+                    <td class="num">${{ item.price }}</td>
+                    <td class="num">${{ item.total_price }}</td>
+                  </tr>
+                {% endwith %}
+                {% endfor %}
+        <tr class="total">
+            <td><b>Итого:</b></td>
+            <td colspan="4"></td>
+            <td class="num">${{ cart.get_total_price }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="text-right">
+        <a href="{% url 'catalog:mytour_list' %}" class="button light">Завершить</a>
+        <a href="{% url 'orders:order_create' %}" class="button">
+        Заказать
+</a>
+    </p>
+{% endblock %}
+
+<!--Это шаблон, используется для отображения содержимого корзины. Он содержит таблицу с элементами, хранящимися в текущей корзине.
+ Мы разрешаем пользователям изменять количество выбранных продуктов, используя форму, которая учитывается в представлении cart_add.
+  Мы также разрешаем пользователям удалять элементы из корзины, предоставляя для каждого из них ссылку Remove.-->

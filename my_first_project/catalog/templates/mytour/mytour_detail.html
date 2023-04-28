@@ -1,0 +1,19 @@
+{% extends "catalog/base.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Наши туры{% endif %}
+{% endblock %}
+{% block content %}
+    <div class="mytour-detail">
+        <img src="{% if mytour.image %}{{ mytour.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="100" height="70">
+        <h1>{{ mytour.name }}</h1>
+        <h2><a href="{{ mytours.category.get_absolute_url }}">{{ mytour.category }}</a></h2>
+        {{ mytour.description|linebreaks }}
+        <p class="price">${{ mytour.price }}</p>
+        <form action="{% url 'cart:cart_add' mytour.id %}" method="post">
+          {{ cart_mytour_form }}
+          {% csrf_token %}
+          <input type="submit" value="Добавить в карзину">
+        </form>
+    </div>
+{% endblock %}

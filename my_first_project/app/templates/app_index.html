@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="col-30 col-md-20 col-lg-10">
+<h3>Уважаемые туристы, с целью усовершенствования программ наших туров, мы периодически проводим опросы. Это важно для нас и наших туристов. Просим Вас принять участие в опросах.</h3>
+<br>
+<h5>Так же вы можиете предложить свои темы для опроса, воспользовавшись формой обратной связи.</h5>
+<br>
+<button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Предложить тему</a></button>
+<br>
+<br>
+{% if question_list %}
+    <ul>
+    {% for question in question_list %}
+        <li><big><a href="/app/{{ question.id }}/">{{ question.question_text }}</a></big></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Опросов нет.</p>
+{% endif %}
+</div>
+{% endblock %}

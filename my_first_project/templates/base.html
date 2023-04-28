@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<head>
+      <body style="background-color:#E0FFFF"></body>
+
+</head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>my_site</title>
+    <div class="container px-9 py-9" id="hanging-icons">
+    <div class="row g-9 py-10 row-cols-10 row-cols-lg-15">
+
+ <div class="container">
+  <div class="element-1" style="width: 600px; height:100px; position:absolute; left:10px;">
+      <span class="title="><big><big><big><b>GRtours</b></big></big></big></span>
+</div>
+  <!-- элемент имеет абсолютное позиционирование и ему не установлены CSS-свойства top, bottom, left и right -->
+  <div class="element-2" style="width: 600px; height:100px; position:absolute; left:250px;">
+      <span class="phone-contact">
+		Наши контакты:<br>
+        +375 (29) ** 777 ** Telegram/Whats App<br>
+        +375 (29) ** 777 ** Viber<br>
+		</span>
+  </div>
+
+  <div class="element-3" style="width: 600px; height:100px; position:absolute; left:650px;">
+      <span class="mail-contact">
+          Наш электронный адрес:<br>
+		<a href="mailto:Grtour@mail.ru">Grtour@mail.ru</a>
+	</span>
+  </div>
+
+<div class="element-4" style="width: 600px; height:100px; position:absolute; left:950px;" >
+	<span class="phone-contact">
+	Наш адрес: г.Минск ул.Притыцкого, 148 офис.12<br>
+	Время работы  Пн-пт 10:00-19:00 <br>
+    сб 11:00-16:00; вс-выходной	</span>
+     </div>
+      </div>
+        </div>
+        </div>
+    {% block head %}
+
+    {% endblock %}
+
+</head>
+<br>
+<br>
+<br>
+<br>
+<body>
+<head>
+    <meta charset="utf-8">
+    <style>
+    li {margin-right: 45px;}
+         #navbar {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      #navbar li { display: inline; }
+      #navbar {
+  margin: 8;
+  padding: 5;
+  list-style-type: none;
+  border: 2px solid #0066FF;
+  border-radius: 10px 5px;
+  width: 1520px;
+  text-align: top;
+  background-color: #0066FF;
+}
+#navbar a {
+  color: #FF6347;
+  padding: 4px 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  width: 80px;
+}
+#navbar a:hover {
+  border-radius: 20px 5px;
+  background-color: #0066FF;
+}
+    </style>
+  </head>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-8">
+      <ul id="navbar">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/country">О стране </a>
+        <ul>
+            <li><a href="/place">Города и курорты</a></li>
+        </ul>
+        </li>
+        <li><a href="/tour">Наши туры</a>
+        <ul>
+            <li><a href="/tour/tour">Программы туров</a></li>
+            <li><a href="/catalog">Каталог туров</a></li>
+            <li><a href="/calendar_tour">Календарь туров</a></li>
+            <li><a href="/hotel">Отели</a></li>
+            <li><a href="/project">Экскурсии </a></li>
+        </ul>
+        </li>
+        <li><a href="/tourist_info">Туристам</a>
+        <ul>
+            <li><a href="/tourist_info/sale">Акции и скидки</a></li>
+            <li><a href="/tourist_info/payment">Способы оплаты</a></li>
+            <li><a href="/articles">Доска объявлений</a></li>
+        </li>
+        </ul>
+        <li><a href="/myblog">Наш блог</a>
+          <ul>
+            <li><a href="/app">Опрос</a></li>
+        </li>
+          </ul>
+        <li><a href="/application8">О нас</a></li>
+        <li><a href="/contact_form">Напишите нам </a></li>
+        <li><a href="/contact">Контакты </a></li>
+         <li><a href="/account">Вход</a></li>
+    </ul>
+
+   <style>
+#navbar ul {
+  display: none;
+  background-color: #FF6347;
+  position: absolute;
+  top: 100%;
+}
+#navbar li:hover ul { display: block; }
+#navbar, #navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#navbar {
+  height: 60px;
+  background-color: #666;
+  padding-left: 15px;
+  min-width: 470px;
+}
+#navbar li {
+  float: left;
+  position: relative;
+  height: 50%;
+}
+#navbar li a {
+  display: block;
+  padding: 0px;
+  width: 115px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+#navbar ul li { float: none; }
+#navbar li:hover { background-color: #FF6347; }
+#navbar ul li:hover { 	#000000 #666; }
+</style>
+  </div>
+<br>
+<br>
+
+
+
+    {% block page_content %}
+
+    {% endblock %}
+
+
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="45" height="28"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-2 mb-md-0 text-muted"><font style="vertical-align: inherit;	color:#0000FF;"><font style="vertical-align: inherit;">© 2023 Компания, ООО GRtours</font></font></span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
