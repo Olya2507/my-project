@@ -10,6 +10,7 @@
 <br>
    <div class="col-md-8 offset-md-2">
   <h1>О нас</h1>
+        <img src="/static/img/img_112.png" alt=" " style="width:500px;height:250px;float:left;margin: 5px 5px 5px 0;">
        <p>Дорогие Друзья! Мы рады приветствовать Вас на нашем сайте. </p>
 <p>Основными направлениями нашей деятельности является организация автобусных  туров в Грузию. </p>
 <p>Грузия – наше главное направление, страна, с которой мы работаем уже несколько лет, которую любим и знаем. Каждый сезон мы открываем что-то новое и для себя и для Вас. </p>
@@ -24,6 +25,7 @@
 <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Предложить тему</a></button>
 <br>
     <h1>Отзывы</h1>
+       <img src="/static/img/img_113.png" alt=" " style="width:1000px;height:300px;float:left;margin: 5px 5px 5px 0;">
     <hr>
     {% for post in posts %}
     <h2><button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></button></h2>

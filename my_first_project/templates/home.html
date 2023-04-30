@@ -175,8 +175,130 @@
       </div>
     </div>
   </div>
-<br>
-<br>
+{% block content %}
+<html>
+<div class="container px-4 py-5 border-top">
+    <title>Слайдер изображений</title>
+<h2 style="color:#0000FF">Фото наших туристов</h2>
+    <style>
+      html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica", sans-serif;
+      }
+      img {
+      max-width: 100%;
+      }
+      .slider-container {
+      height: 80%;
+      width: 80%;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      margin:0 auto;display: table;
+      }
+      .menu {
+      position: absolute;
+      left: 0;
+      z-index: 900;
+      width: 100%;
+      bottom: 0;
+      }
+      .menu label {
+      cursor: pointer;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50px;
+      margin: 0 0.2em 1em;
+      }
+      .menu label:hover,.menu label:focus {
+      background: #1c87c9;
+      }
+      .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 10;
+      padding: 8em 1em 0;
+      background-size: cover;
+      background-position: 50% 50%;
+      transition: left 0s 0.75s;
+      }
+      [id^="slide"]:checked + .slide {
+      left: 0;
+      z-index: 100;
+      transition: left 0.65s ease-out;
+      }
+      .slide-1 {
+      background-image: url("/static/img/img_121.png");
+      }
+      .slide-2 {
+      background-image: url("/static/img/img_122.png");
+      }
+      .slide-3 {
+      background-image: url("/static/img/img_123.png");
+      }
+      .slide-4 {
+      background-image: url("/static/img/img_124.png");
+      }
+      .slide-5 {
+      background-image: url("/static/img/img_125.png");
+      }
+      .slide-6 {
+      background-image: url("/static/img/img_126.png");
+      }
+      .slide-7 {
+      background-image: url("/static/img/img_127.png");
+      }
+      .slide-8 {
+      background-image: url("/static/img/img_128.png");
+      }
+    </style>
+</div>
+  <body>
+
+    <div class="slider-container">
+      <div class="menu">
+        <label for="slide-dot-1"></label>
+        <label for="slide-dot-2"></label>
+        <label for="slide-dot-3"></label>
+        <label for="slide-dot-4"></label>
+        <label for="slide-dot-5"></label>
+        <label for="slide-dot-6"></label>
+        <label for="slide-dot-7"></label>
+        <label for="slide-dot-8"></label>
+      </div>
+      <input id="slide-dot-1" type="radio" name="slides" checked>
+      <div class="slide slide-1"></div>
+      <input id="slide-dot-2" type="radio" name="slides">
+      <div class="slide slide-2"></div>
+      <input id="slide-dot-3" type="radio" name="slides">
+      <div class="slide slide-3"></div>
+      <input id="slide-dot-4" type="radio" name="slides">
+      <div class="slide slide-4"></div>
+      <input id="slide-dot-5" type="radio" name="slides">
+      <div class="slide slide-5"></div>
+      <input id="slide-dot-6" type="radio" name="slides">
+      <div class="slide slide-6"></div>
+      <input id="slide-dot-7" type="radio" name="slides">
+      <div class="slide slide-7"></div>
+      <input id="slide-dot-8" type="radio" name="slides">
+      <div class="slide slide-8"></div>
+    </div>
+
+  </body>
+{% endblock %}
+</html>
 <br>
 
+<div class="container px-6 py-6 border-top">
+<h2 style="color:#0000FF">Мы находимся здесь</h2>
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0d99448e2b6033097c471972e0ed553b6ca340a9df67abfbe08e5c3a74f04026&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+ </div>
 {% endblock %}

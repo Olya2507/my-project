@@ -11,120 +11,8 @@
 <h1>Календарь туров</h1>
 
 <html>
-<head>
-    <title>Слайдер изображений</title>
-    <style>
-      html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: "Helvetica", sans-serif;
-      }
-      img {
-      max-width: 100%;
-      }
-      .slider-container {
-      height: 65%;
-      width: 65%;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      margin:0 auto;display: table;
-      }
-      .menu {
-      position: absolute;
-      left: 0;
-      z-index: 900;
-      width: 100%;
-      bottom: 0;
-      }
-      .menu label {
-      cursor: pointer;
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      background: #fff;
-      border-radius: 50px;
-      margin: 0 0.2em 1em;
-      }
-      .menu label:hover,.menu label:focus {
-      background: #1c87c9;
-      }
-      .slide {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      z-index: 10;
-      padding: 8em 1em 0;
-      background-size: cover;
-      background-position: 50% 50%;
-      transition: left 0s 0.75s;
-      }
-      [id^="slide"]:checked + .slide {
-      left: 0;
-      z-index: 100;
-      transition: left 0.65s ease-out;
-      }
-      .slide-1 {
-      background-image: url("/static/img/img_6.png");
-      }
-      .slide-2 {
-      background-image: url("/static/img/img_3.png");
-      }
-      .slide-3 {
-      background-image: url("/static/img/img_26.png");
-      }
-      .slide-4 {
-      background-image: url("/static/img/img_32.png");
-      }
-      .slide-5 {
-      background-image: url("/static/img/img_7.png");
-      }
-      .slide-6 {
-      background-image: url("/static/img/img_4.png");
-      }
-      .slide-7 {
-      background-image: url("/static/img/img_25.png");
-      }
-      .slide-8 {
-      background-image: url("/static/img/img_33.png");
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider-container">
-      <div class="menu">
-        <label for="slide-dot-1"></label>
-        <label for="slide-dot-2"></label>
-        <label for="slide-dot-3"></label>
-        <label for="slide-dot-4"></label>
-        <label for="slide-dot-5"></label>
-        <label for="slide-dot-6"></label>
-        <label for="slide-dot-7"></label>
-        <label for="slide-dot-8"></label>
-      </div>
-      <input id="slide-dot-1" type="radio" name="slides" checked>
-      <div class="slide slide-1"></div>
-      <input id="slide-dot-2" type="radio" name="slides">
-      <div class="slide slide-2"></div>
-      <input id="slide-dot-3" type="radio" name="slides">
-      <div class="slide slide-3"></div>
-      <input id="slide-dot-4" type="radio" name="slides">
-      <div class="slide slide-4"></div>
-      <input id="slide-dot-5" type="radio" name="slides" checked>
-      <div class="slide slide-5"></div>
-      <input id="slide-dot-6" type="radio" name="slides">
-      <div class="slide slide-6"></div>
-      <input id="slide-dot-7" type="radio" name="slides">
-      <div class="slide slide-7"></div>
-      <input id="slide-dot-8" type="radio" name="slides">
-      <div class="slide slide-8"></div>
-    </div>
-  </body>
-</html>
+<img src="/static/img/img_120.png" alt=" " style="width:400px;height:250px;float:center;margin: 5px 5px 5px 0;">
+
 <br>
 <div class="col-12 col-md-30 col-lg-15">
 <p><b>Для экскурсионных туров с отдыхом на море цена указана на одного человека без питания</b></p>
@@ -260,7 +148,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>450$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
  </tbody>
 </table>
@@ -288,7 +176,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 430$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+        <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>26.05-11.06</td>
@@ -297,7 +185,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 400$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>26.05-11.06</td>
@@ -306,7 +194,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 370$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>26.05-11.06</td>
@@ -315,7 +203,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
     <tr>
     <td>26.05-11.06</td>
@@ -324,7 +212,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>26.05-11.06</td>
@@ -333,7 +221,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>26.05-11.06</td>
@@ -342,7 +230,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>26.05-11.06</td>
@@ -351,7 +239,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>26.05-11.06</td>
@@ -360,7 +248,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 400$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   </tbody>
   </table>
@@ -386,7 +274,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 370$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>10.06-26.06</td>
@@ -395,7 +283,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>10.06-26.06</td>
@@ -404,7 +292,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>10.06-26.06</td>
@@ -413,7 +301,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>10.06-26.06</td>
@@ -422,7 +310,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>10.06-26.06</td>
@@ -431,7 +319,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>10.06-26.06</td>
@@ -440,7 +328,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 400$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>19.06-05.07</td>
@@ -449,7 +337,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>19.06-05.07</td>
@@ -458,7 +346,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 350$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>19.06-05.07</td>
@@ -467,7 +355,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 350$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
    <tr>
     <td>19.06-05.07</td>
@@ -476,7 +364,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 370$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>19.06-05.07</td>
@@ -485,7 +373,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 370$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>19.06-05.07</td>
@@ -494,7 +382,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>19.06-05.07</td>
@@ -503,7 +391,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 420$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
 <td>28.06-14.07</td>
@@ -512,7 +400,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 390$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>28.06-14.07</td>
@@ -521,7 +409,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>28.06-14.07</td>
@@ -530,7 +418,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>28.06-14.07</td>
@@ -539,7 +427,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>28.06-14.07</td>
@@ -548,7 +436,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>28.06-14.07</td>
@@ -557,7 +445,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
     <tr>
     <td>28.06-14.07</td>
@@ -566,7 +454,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 440$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   </tbody>
 </table>
@@ -594,7 +482,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 390$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>07.07-23.07</td>
@@ -603,7 +491,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>07.07-23.07</td>
@@ -612,7 +500,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>07.07-23.07</td>
@@ -621,7 +509,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>07.07-23.07</td>
@@ -630,7 +518,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>07.07-23.07</td>
@@ -639,7 +527,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>07.07-23.07</td>
@@ -648,7 +536,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 440$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -657,7 +545,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 390$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -666,7 +554,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -675,7 +563,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -684,7 +572,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -693,7 +581,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -702,7 +590,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -711,7 +599,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 440$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>25.07-10.08</td>
@@ -720,7 +608,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 390$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>25.07-10.08</td>
@@ -729,7 +617,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>25.07-10.08</td>
@@ -738,7 +626,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -747,7 +635,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -756,7 +644,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>16.07-01.08</td>
@@ -765,7 +653,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>25.07-10.08</td>
@@ -774,7 +662,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 440$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   </tbody>
 </table>
@@ -799,7 +687,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 390$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>03.08-19.08</td>
@@ -808,7 +696,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>03.08-19.08</td>
@@ -817,7 +705,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>03.08-19.08</td>
@@ -826,7 +714,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>03.08-19.08</td>
@@ -835,7 +723,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>03.08-19.08</td>
@@ -844,7 +732,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>03.08-19.08</td>
@@ -853,7 +741,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 440$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>12.08-28.08</td>
@@ -862,7 +750,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 390$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>12.08-28.08</td>
@@ -871,7 +759,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>12.08-28.08</td>
@@ -880,7 +768,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>12.08-28.08</td>
@@ -889,7 +777,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>12.08-28.08</td>
@@ -898,7 +786,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>12.08-28.08</td>
@@ -907,7 +795,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>12.08-28.08</td>
@@ -916,7 +804,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 440$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
 <td>21.08-06.09</td>
@@ -925,7 +813,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 380$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>21.08-06.09</td>
@@ -934,7 +822,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 350$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>21.08-06.09</td>
@@ -943,7 +831,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 350$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>21.08-06.09</td>
@@ -952,7 +840,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 370$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>21.08-06.09</td>
@@ -961,7 +849,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 370$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>21.08-06.09</td>
@@ -970,7 +858,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 350$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>21.08-06.09</td>
@@ -979,7 +867,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 420$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   </tbody>
  </table>
@@ -1005,7 +893,7 @@
     <td>Батуми</td>
     <td>Орби Сити</td>
     <td>от 370$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>01.09-17.09</td>
@@ -1014,7 +902,7 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>01.09-17.09</td>
@@ -1023,7 +911,7 @@
     <td>Кобулети</td>
     <td>Лайк Мари</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>01.09-17.09</td>
@@ -1032,7 +920,7 @@
     <td>Кобулети</td>
     <td>Отель Shine</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>01.09-17.09</td>
@@ -1041,7 +929,7 @@
     <td>Кобулети</td>
     <td>Отель Guest house Ambiance</td>
     <td>от 360$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>01.09-17.09</td>
@@ -1050,7 +938,7 @@
     <td>Уреки</td>
     <td>Imeri</td>
     <td>от 340$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   <tr>
     <td>01.09-17.09</td>
@@ -1059,7 +947,7 @@
     <td>Гонио</td>
     <td>Мандарин</td>
     <td>от 400$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
     <tr>
     <td>20.09-05.10</td>
@@ -1068,14 +956,18 @@
     <td>Кобулети</td>
     <td>Эстония</td>
     <td>от 350$</td>
-    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/contact_form">Забронировать тур</a></button></td>
+    <td><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/catalog">Забронировать тур</a></button></td>
   </tr>
   </tbody>
  </table>
  </div>
 </div>
+ </div>
 </body>
-</html>
 
-  </div>
+  <br>
+  <br>
 {% endblock %}
+<br>
+  <br>
+</html>
