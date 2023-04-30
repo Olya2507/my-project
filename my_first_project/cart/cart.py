@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from catalog.models import Mytour
+from coupons.models import Coupon
 
 #класс Cart, который позволит нам управлять корзиной для покупок. Требуется инициализация корзины с помощью объекта request.
 # Мы храним текущую сессию с помощью self.session = request.session, чтобы сделать его доступным для других методов класса Cart.
@@ -23,6 +24,7 @@ class Cart(object):
             # save an empty cart in the session
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
+        self.coupon_id = self.session.get('coupon_id')
 
     def add(self, mytour, quantity=1, update_quantity=False):
         """
@@ -92,3 +94,24 @@ class Cart(object):
         # удаление корзины из сессии
         del self.session[settings.CART_SESSION_ID]
         self.session.modified = True
+
+    @property
+    def coupon(self):
+        if self.coupon_id:
+            return Coupon.objects.get(id=self.coupon_id)
+        return None
+
+    def get_discount(self):
+        if self.coupon:
+            return (self.coupon.discount / Decimal('100')) * self.get_total_price()
+        return Decimal('0')
+
+    def get_total_price_after_discount(self):
+        return self.get_total_price() - self.get_discount()
+
+    """coupon() : Этот метод определяется как property. Если корзина содержит функцию coupon_id, возвращается 
+    объект Coupon с заданным id.
+get_discount() : Если корзина содержит купон, мы получаем скидку по ставке и возвращаем сумму, которая будет 
+вычтена из общей суммы корзины.
+get_total_price_after_discount() : Мы возвращаем общую сумму корзины после вычета суммы, возвращенной методом 
+get_discount()."""

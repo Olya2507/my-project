@@ -4,6 +4,7 @@ from catalog.models import Mytour
 from .cart import Cart
 from .forms import CartAddMytourForm
 from django.http import HttpResponse
+from coupons.forms import CouponApplyForm
 
 """ Это представление для добавления продуктов в корзину или обновления количества для существующих продуктов. 
 Мы используем декоратор require_POST, чтобы разрешить только POST запросы, поскольку это представление изменит данные. 
@@ -38,5 +39,12 @@ def cart_remove(request, mytour_id):
 
 def cart_detail(request):
     cart = Cart(request)
-    return render(request, 'cart/detail.html', {'cart': cart})
-
+    for item in cart:
+        item['update_quantity_form'] = CartAddMytourForm(
+                            initial={'quantity': item['quantity'],
+                            'update': True})
+    coupon_apply_form = CouponApplyForm()
+    return render(request,
+                  'cart/detail.html',
+                  {'cart': cart,
+                   'coupon_apply_form': coupon_apply_form})

@@ -16,13 +16,13 @@
       <div class="cart">
     {% with total_items=cart|length %}
         {% if cart|length > 0 %}
-            Карзина:
+            <h6>Карзина:</h6>
             <a href="{% url 'cart:cart_detail' %}">
-                {{ total_items }} наименования{{ total_items|pluralize }},
+                {{ total_items }} товара{{ total_items|pluralize }},
                 ${{ cart.get_total_price }}
             </a>
         {% else %}
-            Ваша корзина пуста
+          <h6>Ваша корзина пуста</h6>
         {% endif %}
     {% endwith %}
 </div>

@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "catalog.apps.CatalogConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "coupons.apps.CouponsConfig",
     'bootstrap3',
 
 

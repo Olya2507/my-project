@@ -42,6 +42,7 @@ urlpatterns = [
     path('contact_form/', include('contact_form.urls')),
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
+    path('coupons/', include('coupons.urls', namespace='coupons')),
     path('catalog/', include('catalog.urls', namespace='catalog')),
 ]
 
