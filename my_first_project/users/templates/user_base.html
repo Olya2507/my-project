@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+{% endif %}
+{% block page_content %}
+
+
+           <ul class="rasdel">
+              {% if user.is_authenticated %}
+                <li><a href="/users/profile">Профиль</a></li>
+                <li><a href="/users/logout">Выход</a></li>
+              {% else %}
+              <li><a href="/users/login1">Вход</a></li>
+              <li><a href="/users/register">Регистрация</a></li>
+
+              {% endif %}
+                </ul>
+            </div>
+
+
+    {% block content %} {% endblock content %}
+        </div>
+
+
+</html>
+{% endblock %}

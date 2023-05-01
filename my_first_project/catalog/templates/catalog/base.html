@@ -16,9 +16,9 @@
       <div class="cart">
     {% with total_items=cart|length %}
         {% if cart|length > 0 %}
-            <h6>Карзина:</h6>
+            <h6>Корзина:</h6>
             <a href="{% url 'cart:cart_detail' %}">
-                {{ total_items }} товара{{ total_items|pluralize }},
+                {{ total_items }}tour{{ total_items|pluralize }},
                 ${{ cart.get_total_price }}
             </a>
         {% else %}
@@ -34,4 +34,7 @@
     </div>
   </body>
 </html>
+<br>
+<br>
+<br>
 {% endblock %}

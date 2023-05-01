@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "users.apps.UsersConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,13 +53,15 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     "hotel.apps.HotelConfig",
     "tour.apps.TourConfig",
-    "account.apps.AccountConfig",
     "contact_form.apps.ContactFormConfig",
     "catalog.apps.CatalogConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
     "coupons.apps.CouponsConfig",
     'bootstrap3',
+    'crispy_bootstrap4',
+    'crispy_forms',
+
 
 
 ]
@@ -147,10 +150,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'), 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'account'
-LOGOUT_REDIRECT_URL = "login"
-
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -169,3 +172,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
+

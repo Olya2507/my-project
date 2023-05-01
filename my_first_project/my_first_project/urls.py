@@ -38,7 +38,7 @@ urlpatterns = [
     path("tour/", include('tour.urls')),
     path('articles/', include('articles.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('account/', include('account.urls')),
+    path('users/', include('users.urls', namespace="users")),
     path('contact_form/', include('contact_form.urls')),
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),

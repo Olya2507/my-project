@@ -1,12 +1,12 @@
 {% extends "catalog/base.html" %}
 {% load static %}
 {% block title %}
-    Ваша карзина
+    Ваша корзина
 {% endblock %}
 {% block content %}
 <br>
 <br>
-    <h1>Ваша карзина</h1>
+    <h1>Ваша корзина</h1>
     <table class="cart">
         <style type="text/css">
    TABLE {
@@ -36,7 +36,7 @@
         <tr>
             <th>Фото</th>
             <th>Название тура</th>
-            <th>Количество</th>
+            <th>Количество человек</th>
             <th>Удалить</th>
             <th>Цена тура</th>
             <th>Всего</th>
@@ -101,7 +101,7 @@
 <br>
 <br>
     <p class="btn">
-        <button type="button" class="custom-btn btn-1"><a href="{% url 'catalog:mytour_list' %}" class="button light">Завершить</a></button>
+        <button type="button" class="custom-btn btn-1"><a href="{% url 'catalog:mytour_list' %}" class="button light">Выйти</a></button>
         <button type="button" class="custom-btn btn-1"><a href="{% url 'orders:order_create' %}" class="button">Заказать</a></button>
 
     </p>

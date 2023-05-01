@@ -114,10 +114,14 @@
             <li><a href="/app">Опрос</a></li>
         </li>
           </ul>
-        <li><a href="/application8">О нас</a></li>
+        <li><a href="/application8">О нас</a>
+       <ul>
+            <li><a href="/contact">Контакты</a></li>
+        </li>
+          </ul>
         <li><a href="/contact_form">Напишите нам </a></li>
-        <li><a href="/contact">Контакты </a></li>
-         <li><a href="/account">Вход</a></li>
+        <li><a href="/users/register">Вход</a></li>
+        <li><a href="/cart"><img src="/static/img/img_130.png" alt="" style="width:50px;height:50px"></a></li>
     </ul>
 
    <style>
@@ -164,7 +168,13 @@
       </div>
         </div>
         </div>
-
+{% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+{% endif %}
 {% block page_content %}
 
 {% block content %}
