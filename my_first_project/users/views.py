@@ -19,7 +19,7 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
 
-
+"""Если неавторизованный пользователь теперь попытается открыть страницу профиля, он будет переадресован на страницу входа на сайт"""
 @login_required
 def profile(request):
     if request.method == 'POST':

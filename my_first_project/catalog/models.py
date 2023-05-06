@@ -22,7 +22,8 @@ class Category(models.Model):
 
 
 class Mytour(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='mytours')  # Это ForeignKey модели Category. Это отношение "многие к одному": тур относится к одной категории, а категория содержит несколько туров
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='mytours')  # Это ForeignKey модели Category.
+    # Это отношение "многие к одному": тур относится к одной категории, а категория содержит несколько туров
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True) # URL тура
     image = models.ImageField(upload_to='mytour/%Y/%m/%d', blank=True)
@@ -31,7 +32,7 @@ class Mytour(models.Model):
     stock = models.PositiveIntegerField() #поле PositiveIntegerField для хранения количества оставшихся мест
     day = models.IntegerField()
     hotel = models.CharField(max_length=200, db_index=True)
-    data_tour = models.DateTimeField()
+    data_tour = models.DateTimeField(blank=False)
     available = models.BooleanField(default=True) #Это булево значение, указывающее, доступен ли тур. Позволяет включить/отключить тур в каталоге.
     created = models.DateTimeField(auto_now_add=True) #Это поле хранит дату когда был создан объект
     updated = models.DateTimeField(auto_now=True) #В этом поле хранится время последнего обновления объекта.

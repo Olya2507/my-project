@@ -8,7 +8,8 @@ from cart.forms import CartAddMytourForm
 def mytour_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
-    mytours = Mytour.objects.filter(available=True) #Мы отфильтруем запрос с available=True, чтобы получить только доступные продукты. Мы будем использовать необязательный параметр category_slug, чтобы дополнительно фильтровать продукты по данной категории.
+    mytours = Mytour.objects.filter(available=True) #Мы отфильтруем запрос с available=True, чтобы получить только доступные продукты.
+    # Мы будем использовать необязательный параметр category_slug, чтобы дополнительно фильтровать продукты по данной категории.
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         mytours = mytours.filter(category=category)

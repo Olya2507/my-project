@@ -1,0 +1,20 @@
+executor.py [LINE:362] #INFO     [2023-05-04 20:10:26,465] Bot: GRtour [@GRtour_bot]
+executor.py [LINE:358] #WARNING  [2023-05-04 20:10:26,593] Updates were skipped successfully.
+dispatcher.py [LINE:358] #INFO     [2023-05-04 20:10:26,593] Start polling.
+dispatcher.py [LINE:433] #INFO     [2023-05-04 20:11:06,259] Stop polling...
+executor.py [LINE:329] #WARNING  [2023-05-04 20:11:06,260] Goodbye!
+executor.py [LINE:362] #INFO     [2023-05-04 20:11:09,232] Bot: GRtour [@GRtour_bot]
+executor.py [LINE:358] #WARNING  [2023-05-04 20:11:09,381] Updates were skipped successfully.
+dispatcher.py [LINE:358] #INFO     [2023-05-04 20:11:09,382] Start polling.
+dispatcher.py [LINE:433] #INFO     [2023-05-04 20:12:17,175] Stop polling...
+executor.py [LINE:329] #WARNING  [2023-05-04 20:12:17,177] Goodbye!
+executor.py [LINE:362] #INFO     [2023-05-04 20:12:19,249] Bot: GRtour [@GRtour_bot]
+executor.py [LINE:358] #WARNING  [2023-05-04 20:12:19,399] Updates were skipped successfully.
+dispatcher.py [LINE:358] #INFO     [2023-05-04 20:12:19,399] Start polling.
+dispatcher.py [LINE:433] #INFO     [2023-05-04 20:14:30,474] Stop polling...
+executor.py [LINE:329] #WARNING  [2023-05-04 20:14:30,474] Goodbye!
+executor.py [LINE:362] #INFO     [2023-05-04 20:34:52,383] Bot: GRtour [@GRtour_bot]
+executor.py [LINE:358] #WARNING  [2023-05-04 20:34:52,503] Updates were skipped successfully.
+dispatcher.py [LINE:358] #INFO     [2023-05-04 20:34:52,503] Start polling.
+dispatcher.py [LINE:433] #INFO     [2023-05-04 20:41:14,226] Stop polling...
+executor.py [LINE:329] #WARNING  [2023-05-04 20:41:14,226] Goodbye!

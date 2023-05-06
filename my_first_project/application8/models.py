@@ -22,3 +22,11 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created_on',)
+
+    def __str__(self):
+        return 'Comment by {} on {}'.format(self.author, self.post)
+

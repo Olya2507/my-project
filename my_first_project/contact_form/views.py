@@ -13,6 +13,8 @@ class FeedBackView(View):
             'title': 'Написать мне'
         })
 
+    """При запросе GET возвращаем contact_form.html представление, а так же заголовок."""
+
     def post(self, request, *args, **kwargs):
         form = FeedBackForm(request.POST)
         if form.is_valid():
@@ -26,12 +28,22 @@ class FeedBackView(View):
             except BadHeaderError:
                 return HttpResponse('Невалидный заголовок')
             return HttpResponseRedirect('success')
-        return render(request, 'contact_form.html', context={
-            'form': form,
-        })
+        return render(request, 'contact_form.html', context={'form': form,
+                                                             })
+
+
+    """При запросе POST мы забираем все что было отправленно через форму. Отправку письма мы оборачиваем в конструкцию try/except.
+В send_mail мы помещаем такие поля как subject, message, from_email и почту куда мы отправляем письмо
+ (на скрине из документации эти поля описаны.) Не можем сюда ничего лишнего поместить, только аргументы, которые 
+ предполагает функция. Если возникнет ошибка BadHeaderError, мы вернем сообщение "Невалидный заголовок".после успешной отправки мы
+  редиректим пользователя на страницу success."""
+
 
 class SuccessView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'success.html', context={
             'title': 'Спасибо'
         })
+
+
+    """рендерим наше представление и передаем заголовок """
